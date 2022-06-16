@@ -17,7 +17,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 ALGORITHM = "HS256"
-SECRET_KEY = "61b3ccc171463868608752edcf25ed364b5cbc1ebd5b52474009f3c70751fd48"
+SECRET_KEY = "#"
 
 
 async def get_current_user(token: str = Depends(oauth2_scheme)):
