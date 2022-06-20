@@ -143,7 +143,7 @@ async def getslots(docid: int, current_user: User = Depends(get_current_active_u
     return pats
 
 
-@ app.post("/book/{docid}/")
+@ app.post("/book")
 async def book(docid: int, duration: int, current_user: User = Depends(get_current_active_user)):
     doctors = database.doctors
     apps = database.apps
