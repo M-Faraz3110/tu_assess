@@ -75,11 +75,6 @@ async def read_users_me(current_user: User = Depends(get_current_active_user)):
     return current_user
 
 
-@app.get("/users/me/apps/")
-async def read_own_items(current_user: User = Depends(get_current_active_user)):
-    return [current_user.apps]
-
-
 @app.get("/doctors")  # ALL DOCTORS
 async def getdocs():
     doctors = database.doctors
