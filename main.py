@@ -142,7 +142,7 @@ async def getslots(docid: int, current_user: User = Depends(get_current_active_u
 async def book(docid: int, duration: int, current_user: User = Depends(get_current_active_user)):
     doctors = database.doctors
     apps = database.apps
-    if current_user.type == "patient":
+    if current_user.type == "patient" and duration > 15 and duration < 120:
         doc = doctors.find_one({"id": docid})
         if doc["time_left"] > duration/60 and apps.count_documents({"doc_id": docid}) < 12:
             apps.insert_one({
